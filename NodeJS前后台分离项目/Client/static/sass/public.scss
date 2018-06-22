@@ -1,0 +1,237 @@
+/**
+ * fixed mobile border width 1px bug
+ * @param $bc border-color {Color}
+ * @param $side 
+ *
+**/
+
+//@import './theme/lightviolet.scss';               //浅紫色
+//@import './theme/lightblue.scss';               //浅蓝色
+//@import './theme/lightred.scss';                //浅红色
+@import './theme/yellow.scss';                  //土豪金
+//@import './theme/lightyellow.scss';             //玛雅黄色
+//@import './theme/lightorange.scss';             //淘宝红
+
+
+
+//@import './theme/blue.scss';                    //深蓝色
+//@import './theme/orange.scss';                  //橘黄色
+//@import './theme/red.scss';                     //深红色
+//@import './theme/violet.scss';                  //深紫色
+
+
+
+
+//万能清除浮动 before
+@mixin clear(){
+    &::before{
+        display: block;
+        content: '';
+        font-size: 0;
+        overflow:hidden;
+        visibility: hidden;
+        clear: both;
+    }
+}
+
+
+//不可点击元素1像素边框
+@mixin border1px($bc:#000, $side: all, $br: 0, $bs: solid) {
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        @if $side==all {
+            border: 1px $bs $bc;
+        }
+        @else {
+            $size: length($side);
+            @for $i from 1 through $size {
+                border-#{nth($side, $i)}: 1px $bs $bc;
+            }
+        }
+        point-events:none;
+    }
+    @media (min--moz-device-pixel-ratio: 1.5),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (min-device-pixel-ratio: 1.5),
+    (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx),
+    (-ms-high-contrast:active),
+    (-ms-high-contrast:none) {
+        &:after {
+            width: 200%;
+            height: 200%;
+            transform: scale(.5);
+            transform-origin: 0 0;
+            border-radius: #{$br*2}px;
+        }
+    }
+    @media (-webkit-device-pixel-ratio: 1.5) {
+        &:after {
+            width: 150%;
+            height: 150%;
+            transform: scale(.6666);
+            transform-origin: 0 0;
+            border-radius: #{$br*1.5}px;
+        }
+    }
+    @media (-webkit-device-pixel-ratio: 3) {
+        &:after {
+            width: 300%;
+            height: 300%;
+            transform: scale(.3333);
+            transform-origin: 0 0;
+            border-radius: #{$br*3}px;
+        }
+    }
+}
+
+@mixin SelectedBorder($bc:#000, $side: all, $br: 0, $bs: solid) {
+    position: relative;
+    &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        @if $side==all {
+            border: 1px $bs $bc;
+        }
+        @else {
+            $size: length($side);
+            @for $i from 1 through $size {
+                border-#{nth($side, $i)}: 1px $bs $bc;
+            }
+        }
+        point-events:none;
+    }
+    @media (min--moz-device-pixel-ratio: 1.5),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (min-device-pixel-ratio: 1.5),
+    (min-resolution: 144dpi),
+    (min-resolution: 1.5dppx),
+    (-ms-high-contrast:active),
+    (-ms-high-contrast:none) {
+        &:before {
+            width: 200%;
+            height: 200%;
+            transform: scale(.5);
+            transform-origin: 0 0;
+            border-radius: #{$br*2}px;
+        }
+    }
+    @media (-webkit-device-pixel-ratio: 1.5) {
+        &:before {
+            width: 150%;
+            height: 150%;
+            transform: scale(.6666);
+            transform-origin: 0 0;
+            border-radius: #{$br*1.5}px;
+        }
+    }
+    @media (-webkit-device-pixel-ratio: 3) {
+        &:before {
+            width: 300%;
+            height: 300%;
+            transform: scale(.3333);
+            transform-origin: 0 0;
+            border-radius: #{$br*3}px;
+        }
+    }
+}
+
+
+//可点击元素1像素边框
+@mixin border-1px($bc:#000, $side: all){
+      position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        box-sizing: border-box;
+        background: $bc;
+        @if $side == left{
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            transform: scaleX(0.5);
+        }@else if $side == right{
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            transform: scaleX(0.5);
+        }@else if $side == top{
+            right: 0;
+            top: 0;
+            height:1px;
+            width: 100%;
+            transform: scaleY(0.5);
+        }@else{
+            right: 0;
+            bottom: 0;
+            height:1px;
+            width: 100%;
+            transform: scaleY(0.5);
+        }
+    }
+}
+
+// 四边形切角
+@mixin arrow($direction,
+$size,
+$color) {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+    border-width: $size;
+    cursor: pointer;
+    @if $direction == top {
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent $color transparent;
+        border-top: none;
+    }
+    @else if $direction == bottom {
+        border-style: solid dashed dashed dashed;
+        border-color: $color transparent transparent transparent;
+        border-bottom: none;
+    }
+    @else if $direction == right {
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent $color;
+        border-right: none;
+    }
+    @else if $direction == left {
+        border-style: dashed solid dashed dashed;
+        border-color: transparent $color transparent transparent;
+        border-left: none;
+    }
+}
+
+//placeholder的默认颜色
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    color: $assistFontColor;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: $assistFontColor;
+}
+input::-moz-placeholder, 
+textarea::-moz-placeholder {
+    color: $assistFontColor;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: $assistFontColor;
+}

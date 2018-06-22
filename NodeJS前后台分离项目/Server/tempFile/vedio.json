@@ -1,0 +1,68 @@
+[
+    {
+        "ID": 4,
+        "PARA_NAME": "AG真人视讯",
+        "LOTTERY_TICKET_NAME": "AG旗舰厅",
+        "REMARK": "澳门银河旗舰厅官方直营",
+        "MOBILE_LOGO_URL": "/img/base/g-ag-636194984761208526.png",
+        "MOBILE_IND": "1",
+        "CODE": "ag_live",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 5,
+        "PARA_NAME": "BBIN真人视讯",
+        "LOTTERY_TICKET_NAME": "BBIN真人馆",
+        "REMARK": "澳门银河娱乐场官方直营",
+        "MOBILE_LOGO_URL": "/img/base/live_bbin-636188169829767017.png",
+        "MOBILE_IND": "1",
+        "CODE": "bbin_live",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 1891,
+        "PARA_NAME": "OB真人视讯",
+        "LOTTERY_TICKET_NAME": "OB真人视讯",
+        "REMARK": "&nbsp;",
+        "MOBILE_LOGO_URL": "/img/base/live_ob.png",
+        "MOBILE_IND": "1",
+        "CODE": "ob_live",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 6,
+        "PARA_NAME": "OG真人视讯",
+        "LOTTERY_TICKET_NAME": "OG真人视讯",
+        "REMARK": "澳门银河旗舰厅官方直营",
+        "MOBILE_LOGO_URL": "/img/base/live_og-636188170869703637.png",
+        "MOBILE_IND": "1",
+        "CODE": "og_live",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 753,
+        "PARA_NAME": "SA真人视讯",
+        "LOTTERY_TICKET_NAME": "SA真人视讯",
+        "REMARK": "&nbsp;",
+        "MOBILE_LOGO_URL": "/img/base/SA_Gaming_Logo_W.283x347-636295108498178493.png",
+        "MOBILE_IND": "1",
+        "CODE": "sa_live",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 1814,
+        "PARA_NAME": "DS真人视讯",
+        "LOTTERY_TICKET_NAME": "DS真人视讯",
+        "REMARK": "鼎盛真人视讯",
+        "MOBILE_LOGO_URL": "/img/base/game_code/DS_scene_img-636622398470040809.png",
+        "MOBILE_IND": "1",
+        "CODE": "ds_live",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    }
+]

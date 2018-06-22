@@ -1,0 +1,57 @@
+[
+    {
+        "ID": 10,
+        "PARA_NAME": "MG电子游艺",
+        "LOTTERY_TICKET_NAME": "MG电子游艺",
+        "REMARK": "&nbsp;",
+        "MOBILE_LOGO_URL": "/img/base/slots-636188171226556714-636198273423182719.png",
+        "MOBILE_IND": "1",
+        "CODE": "mg_electronic",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 11,
+        "PARA_NAME": "PT电子游艺",
+        "LOTTERY_TICKET_NAME": "PT电子游艺",
+        "REMARK": "pt",
+        "MOBILE_LOGO_URL": "/img/base/pt-636195002432919565.png",
+        "MOBILE_IND": "1",
+        "CODE": "pt_electronic",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 12,
+        "PARA_NAME": "AG电子游艺",
+        "LOTTERY_TICKET_NAME": "AG电子游艺",
+        "REMARK": "ag",
+        "MOBILE_LOGO_URL": "/img/base/g-ag-636195002564271795.png",
+        "MOBILE_IND": "1",
+        "CODE": "ag_electronic",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 15,
+        "PARA_NAME": "HB电子游艺",
+        "LOTTERY_TICKET_NAME": "HB电子游艺",
+        "REMARK": "hb",
+        "MOBILE_LOGO_URL": "/img/base/hb-636195003033520620.png",
+        "MOBILE_IND": "1",
+        "CODE": "hb_electronic",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    },
+    {
+        "ID": 781,
+        "PARA_NAME": "SA电子游艺",
+        "LOTTERY_TICKET_NAME": "SA电子游艺",
+        "REMARK": "SA电子游艺",
+        "MOBILE_LOGO_URL": "/img/base/SA_Gaming_Logo_W.283x347-636293520534573097.png",
+        "MOBILE_IND": "1",
+        "CODE": "sa_electronic",
+        "PERIODS_NO": "0",
+        "COLL": "0"
+    }
+]

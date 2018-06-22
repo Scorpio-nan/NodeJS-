@@ -1,0 +1,30 @@
+
+$importFontColor:#333;      //全局重要文字
+
+$normalFontColor:#666;      //全局普通文字
+
+$assistFontColor:#999;      //全局辅助信息文字
+
+$warnColor:#f76260;         //警告色
+
+$successColor:#09bb07;      //成功色
+
+$errorColor:#f43530;        //错误
+
+$infoColor:#10aeff;         //普通蓝色信息
+
+
+
+//个人中心提款渐变
+@mixin linearGradient(){
+    background: linear-gradient(to bottom, #f7ab00 0%,#ed6c00 100%);
+}
+//头部主题色渐变
+@mixin themeLinear(){
+    background:linear-gradient(top, #feb53b, #fa9309);
+}
+//app背景
+@mixin themeBg(){
+    background: url('~static/img/public/bg.jpg') no-repeat;
+    background-size:cover;
+}
