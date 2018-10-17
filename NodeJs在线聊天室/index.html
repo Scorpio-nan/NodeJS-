@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/layer/2.3/skin/layer.css" rel="stylesheet">
+		<style type="text/css">
+			#box {
+				width: 1000px;
+				margin: 150px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="row-fluid">
+							<div class="span8" v-if="!islogin">
+								<div class="form-group">
+									<label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+									<div class="col-sm-10">
+										<input id="user" type="text" class="form-control" id="inputEmail3" placeholder="请输入用户名" v-model="user">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+									<div class="col-sm-10">
+										<input id="pass" type="text" class="form-control" id="inputPassword3" placeholder="请输入密码" v-model="pass" autocomplete="new-password">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button type="button" class="btn btn-default" @click="login()">Sign in</button>
+									</div>
+								</div>
+							</div>
+							<div class="span8" v-if="islogin">
+								<dl>
+									<dt>
+										Rolex
+									</dt>
+									<dd>
+										劳力士创始人为汉斯.威尔斯多夫，1908年他在瑞士将劳力士注册为商标。
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/layer/2.3/layer.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+		<script src="http://10.8.16.11:9527/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var io = io.connect('http://10.8.16.11:9527');
+			var vm = new Vue({
+				el: '#box',
+				data: {
+					user: '',
+					pass: '',
+					obj: {},
+					islogin: false,
+				},
+				methods: {
+					login() {
+						if(!this.user || this.user == '') {
+							layer.alert('用户名不能为空哦~');
+							return;
+						}
+						if(!this.pass || this.pass == '') {
+							layer.alert('密码不能为空哦~');
+							return;
+						}
+						io.emit('users', {
+							user: this.user,
+							pass: this.pass
+						})
+					},
+
+				},
+				mounted() {
+					io.on('login', obj => {
+						this.islogin = true;
+						this.obj = obj.onlineUsers;
+					});
+
+					io.on('begin', obj => {
+						if(!obj.isTrue) {
+							layer.msg(obj.msg);
+						} else {
+							layer.msg(obj.msg);
+						}
+					});
+
+					io.on('logout', obj => {
+						layer.msg(obj.user.user + '退出了房间~');
+					})
+					
+					
+					
+					
+				}
+			})
+		</script>
+	</body>
+
+</html>
